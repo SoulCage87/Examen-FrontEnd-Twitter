@@ -44,7 +44,7 @@ export const Muro = () => {
    const url = baseUrl + `/comentario/${idComment}`
    const result = await axios.delete(url)
    const data = (await result).data
-   setBorrar(borrar + 1)
+   navigate('/muro')
   }
 
 
@@ -101,9 +101,10 @@ export const Muro = () => {
               {
                 comments.map((comentario) => (
 
-                  <div key={comentario.id} className="container">
-                    <div className="text-nowrap bg-body-secondary border" style={{ width: '8rem' }}>
-                      <p>Comentario: {comentario.comentario} <button className='btn btn-danger' onClick={() => deleteComment(comentario.id)} style={{height: '2rem'}}><img src="/src/assets/eliminar.png" alt="" style={{height: '1.5rem'}}/></button></p>
+                  <div key={comentario.id} className="container mt-3">
+                    <div className="text-nowrap" style={{ width: '8rem' }}>
+                      <p>Comentario: {comentario.comentario}</p>
+                      <button className='btn btn-outline-danger p-1' onClick={() => deleteComment(comentario.id)} style={{height: '2rem'}}><img src="/src/assets/eliminar.png" alt=""  style={{height: '1.5rem'}}/></button><div className="text-end">{comentario.fecha_comentario}</div>
                     </div>
                   </div>
 
@@ -111,7 +112,7 @@ export const Muro = () => {
               }
             </div>
             <div className="modal-footer">
-              <button type="button" id='close' className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" id='close' className="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             </div>
           </div>
         </div>
