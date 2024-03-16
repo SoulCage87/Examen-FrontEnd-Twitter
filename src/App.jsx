@@ -7,6 +7,8 @@ import { Muro } from './components/Muro.jsx';
 import {Registrarse} from './components/Registrarse.jsx'
 import './App.css'
 import { CrearPost } from './components/CrearPost.jsx';
+import { EditPost } from './components/EditPost.jsx';
+import { AgregarComentario } from './components/AgregarComentario.jsx';
 
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
           <Route path='/muro' element={<Muro />} />
           <Route path='/Registrate' element={<Registrarse />}/>
           <Route path='/CrearPost' element={<CrearPost/>} />
+          <Route path='/editPost/:idPost' element= {<EditPost />} />
+          <Route path='/aggComentario/:idPost' element= {<AgregarComentario />}/>
         </Routes>
       </BrowserRouter>
     </>
