@@ -33,7 +33,8 @@ export const IniciarSesion = () => {
             navigate('/muro')
         } catch (e) {
             setInicioSesion('Error de Inicio de Sesion')
-            console.log(inicioSesion)
+            let mjs = document.getElementById('error')
+            mjs.innerHTML = `<p>Error de Inicio de Sesion</p>`
         }
     }
 
@@ -51,6 +52,7 @@ export const IniciarSesion = () => {
                         </div>
                         <div className="col-md-8">
                             <div className="card-body">
+                            <h5 className="card-title text-center mx-3">Bienvenido a Fake X!</h5>
                                 <h5 className="card-title text-center mx-3">Iniciar Sesion</h5>
                                 <div className="input-group mb-3 m-2">
                                     <span className="input-group-text" id="basic-addon1">Usuario</span>
@@ -60,6 +62,7 @@ export const IniciarSesion = () => {
                                     <span className="input-group-text" id="basic-addon1">Contraseña</span>
                                     <input type="password" name='contrasena' className="form-control" placeholder="..." onChange={onChangeHandler} />
                                 </div>
+                                <div id='error' className='text-center' style={{color: 'red'}}></div>
                                 <div className="text-center">
                                 <button type="submit" className="btn btn-primary mb-3">Iniciar Sesion</button>
                                 </div>                            

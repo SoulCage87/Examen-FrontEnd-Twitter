@@ -6,6 +6,7 @@ import { IniciarSesion } from './components/IniciarSesion.jsx';
 import { Muro } from './components/Muro.jsx';
 import {Registrarse} from './components/Registrarse.jsx'
 import './App.css'
+import { CrearPost } from './components/CrearPost.jsx';
 
 
 function App() {
@@ -16,7 +17,6 @@ function App() {
         <div className="container">
           <a className="navbar-brand" href="#">
             <img src="/src/assets/X-Social.svg" alt="Fake X" width="30" height="29" className="d-inline-block align-text-top" />
-            Fake X
           </a>
         </div>
       </nav>
@@ -25,6 +25,7 @@ function App() {
           <Route path='/' element={<IniciarSesion />} />
           <Route path='/muro' element={<Muro />} />
           <Route path='/Registrate' element={<Registrarse />}/>
+          <Route path='/CrearPost' element={<CrearPost/>} />
         </Routes>
       </BrowserRouter>
     </>
