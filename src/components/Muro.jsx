@@ -86,6 +86,7 @@ export const Muro = () => {
                   Agregar Comentario
                 </button>
               </div>
+              <p className='fs-6'>fecha publicacion: <br/> {post.fecha_post}</p>
             </div>
           ))
         }
@@ -101,8 +102,9 @@ export const Muro = () => {
               {
                 comments.map((comentario) => (
 
-                  <div key={comentario.id} className="container mt-3">
+                  <div key={comentario.id} className="container mt-3 border">
                     <div className="text-nowrap" style={{ width: '8rem' }}>
+                      <p>Usuario: {comentario.nombre_usuario}</p>
                       <p>Comentario: {comentario.comentario}</p>
                       <button className='btn btn-outline-danger p-1' onClick={() => deleteComment(comentario.id)} style={{height: '2rem'}}><img src="/src/assets/eliminar.png" alt=""  style={{height: '1.5rem'}}/></button><div className="text-end">{comentario.fecha_comentario}</div>
                     </div>
